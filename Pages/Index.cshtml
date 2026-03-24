@@ -1,0 +1,94 @@
+﻿@page
+@model EchoType.Pages.IndexModel
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EchoType — Smart Input</title>
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+    <div class="bg-lines"></div>
+
+    <main class="page">
+
+        <header class="site-header">
+            <span class="badge">ASP.NET Core · Razor Pages · C#</span>
+            <h1>Echo<em>Type</em></h1>
+            <p class="tagline">// type anything — we will tell you what it is</p>
+        </header>
+
+        <div class="card">
+
+            <div class="section-label">
+                <span class="num">01</span> Your Input
+            </div>
+
+            <div class="field-wrap">
+                <input type="text"
+                       id="txtInput"
+                       placeholder="name, number, email, date, math…"
+                       autocomplete="off"
+                       spellcheck="false" />
+                <div class="field-bar"></div>
+            </div>
+
+            <div class="input-footer">
+                <span class="char-info" id="charInfo">0 chars</span>
+                <button class="process-btn" id="processBtn" disabled>
+                    <svg class="btn-icon" viewBox="0 0 16 16" fill="none"
+                         stroke="currentColor" stroke-width="2"
+                         stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="10 6 14 10 10 14"/>
+                        <path d="M2 2v7a1 1 0 001 1h11"/>
+                    </svg>
+                    Process
+                </button>
+            </div>
+
+            <div class="chips">
+                <span class="chip" data-val="Alice">      <em>name</em> Alice</span>
+                <span class="chip" data-val="97">         <em>number</em> 97</span>
+                <span class="chip" data-val="hi@gmail.com"><em>email</em> hi@gmail</span>
+                <span class="chip" data-val="https://github.com"><em>url</em> github</span>
+                <span class="chip" data-val="4 * 9 - 3"> <em>math</em> 4*9-3</span>
+                <span class="chip" data-val="2025-07-04"> <em>date</em> Jul 4</span>
+                <span class="chip" data-val="#3498DB">    <em>color</em> #3498DB</span>
+                <span class="chip" data-val="+91 98765 43210"><em>phone</em> +91…</span>
+                <span class="chip" data-val="level">      <em>palindrome</em> level</span>
+                <span class="chip" data-val="HELLO WORLD"><em>caps</em> HELLO</span>
+            </div>
+
+            <div class="divider">
+                <span class="div-line"></span>
+                <span class="div-glyph">↓</span>
+                <span class="div-line"></span>
+            </div>
+
+            <div class="section-label">
+                <span class="num accent2">02</span> Smart Output
+            </div>
+
+            <div class="output-panel" id="outputPanel">
+                <div class="scan-line"></div>
+                <p class="empty-msg" id="emptyMsg">submit something to see the result…</p>
+                <div class="result" id="result">
+                    <span class="result-tag" id="resultTag"></span>
+                    <p class="result-text" id="resultText"></p>
+                </div>
+            </div>
+
+        </div>
+
+        <footer class="site-footer">
+            Index.cshtml &nbsp;·&nbsp; site.css &nbsp;·&nbsp; site.js
+        </footer>
+
+    </main>
+
+    <script src="~/js/site.js"></script>
+</body>
+</html>
